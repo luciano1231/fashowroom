@@ -241,6 +241,13 @@ function renderCart() {
 function sendWhatsApp() {
   if (cart.length === 0) return;
 
+  if (!currentUser) {
+    closeCart();
+    showModal('login');
+    showToast('⚠️ Por favor, iniciá sesión para enviar el pedido');
+    return;
+  }
+
   let msg = '🛍️ *Pedido FA Showroom*\n\n';
   let total = 0;
 
@@ -254,9 +261,7 @@ function sendWhatsApp() {
 
   msg += `\n💰 *Total: $${total.toLocaleString('es-AR')}*\n`;
 
-  if (currentUser) {
-    msg += `\n👤 *Cliente:* ${currentUser.name}\n📄 *DNI:* ${currentUser.dni}\n`;
-  }
+  msg += `\n👤 *Cliente:* ${currentUser.name}\n📄 *DNI:* ${currentUser.dni}\n`;
 
   msg += '\n¡Gracias! 💕';
 
