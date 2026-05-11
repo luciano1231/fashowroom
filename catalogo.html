@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | FA Showroom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="catalog-page">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar scrolled">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span>FA Showroom</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="index.html#categorias">Categorías</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-btn" id="login-btn" title="Iniciar sesión">👤</button>
+                <button class="nav-btn" id="cart-btn" title="Carrito">
+                    🛍️
+                    <span class="cart-count" id="cart-count" style="display: none;">0</span>
+                </button>
+                <button class="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== CATALOG HEADER ===== -->
+    <div class="catalog-header-banner">
+        <div class="container">
+            <h1>Nuestro Catálogo</h1>
+            <p>Encontrá tu estilo. Filtrá por talle, color y categoría.</p>
+        </div>
+    </div>
+
+    <!-- ===== CATALOG LAYOUT ===== -->
+    <div class="container catalog-layout">
+        
+        <!-- SIDEBAR FILTERS -->
+        <aside class="catalog-sidebar">
+            <div class="filter-section">
+                <h3>Buscar</h3>
+                <div class="form-group">
+                    <input type="text" id="filter-search" placeholder="Ej: Blazer, Vestido...">
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Categoría</h3>
+                <div class="form-group">
+                    <select id="filter-category">
+                        <option value="">Todas las categorías</option>
+                        <option value="Sacos">Sacos & Blazers</option>
+                        <option value="Vestidos">Vestidos</option>
+                        <option value="Pantalones">Pantalones</option>
+                        <option value="Tops">Tops & Blusas</option>
+                        <option value="Faldas">Faldas</option>
+                        <option value="Camisas">Camisas</option>
+                        <option value="Monos">Monos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Talle</h3>
+                <div class="form-group">
+                    <select id="filter-size">
+                        <option value="">Todos los talles</option>
+                        <option value="S">S (Small)</option>
+                        <option value="M">M (Medium)</option>
+                        <option value="L">L (Large)</option>
+                        <option value="XL">XL (Extra Large)</option>
+                        <option value="36">36</option>
+                        <option value="38">38</option>
+                        <option value="40">40</option>
+                        <option value="42">42</option>
+                        <option value="Único">Talle Único</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Color</h3>
+                <div class="form-group">
+                    <select id="filter-color">
+                        <option value="">Todos los colores</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Rojo">Rojo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Celeste">Celeste</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Rosa">Rosa</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Precio Máximo: <span id="price-output">$60.000</span></h3>
+                <input type="range" id="filter-price" min="10000" max="60000" step="1000" value="60000" style="width: 100%;">
+            </div>
+        </aside>
+
+        <!-- GRID -->
+        <main class="catalog-main">
+            <div class="arrivals-grid" id="catalog-grid">
+                <!-- Productos inyectados por JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 style="color: var(--pink-primary); font-family: 'Playfair Display'; font-size: 1.5rem;">FA Showroom</h3>
+                    <p>Moda pensada para la mujer moderna. Destacá tu estilo con prendas únicas y de calidad.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FA Showroom. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== AUTH MODAL ===== -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal" id="modal-content">
+            <button class="modal-close" id="modal-close">✕</button>
+        </div>
+    </div>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito 🛍️</h3>
+            <button id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="amount" id="cart-total-amount">$0</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="sendWhatsApp()">
+                Finalizar Compra por WhatsApp 💬
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

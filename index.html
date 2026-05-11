@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA Showroom | Ropa de Moda para Mujer</title>
+    <meta name="description" content="FA Showroom - Moda femenina, elegante y moderna. Explorá nuestro catálogo, nuevos ingresos y hacé tu pedido.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <!-- Aquí iría el logo, por ahora un emoji de reemplazo -->
+                <span>FA Showroom</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ingresos">Nuevos Ingresos</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#showroom">Showroom</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-btn" id="login-btn" title="Iniciar sesión">👤</button>
+                <button class="nav-btn" id="cart-btn" title="Carrito">
+                    🛍️
+                    <span class="cart-count" id="cart-count" style="display: none;">0</span>
+                </button>
+                <button class="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Descubrí tu <br><span>estilo único</span></h1>
+                <p>Moda femenina pensada para resaltar tu belleza y acompañarte en cada momento. Prendas seleccionadas con amor.</p>
+                
+                <div class="hero-badges">
+                    <span class="badge">✨ Nuevos ingresos</span>
+                    <span class="badge">🚚 Envíos a todo el país</span>
+                </div>
+                
+                <div class="btn-group">
+                    <a href="#ingresos" class="btn btn-primary">Ver Catálogo</a>
+                    <a href="#showroom" class="btn btn-outline">Visitar Showroom</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- Usando una imagen real de la carpeta Imagenes raiz -->
+                <img src="Imagenes/predas-de-moda-primeriti-seleccion-moda-mujer-portada.webp" alt="Moda FA Showroom" style="max-width: 100%; border-radius: 40px 100px 40px 100px; box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INFO BANNERS ===== -->
+    <section class="section" style="padding-top: 40px; padding-bottom: 40px; background: var(--white);">
+        <div class="container info-grid">
+            <div class="info-card">
+                <div class="info-icon">💳</div>
+                <h3>Medios de Pago</h3>
+                <p>Tarjetas, Transferencias o Efectivo.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🚚</div>
+                <h3>Envíos al País</h3>
+                <p>Llevamos tu pedido a donde estés.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">📍</div>
+                <h3>Ubicación</h3>
+                <p>General Paz 894 (con cita previa).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEW ARRIVALS ===== -->
+    <section class="section" id="ingresos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Colección Actual</span>
+                <h2>Nuevos Ingresos & Catálogo</h2>
+                <p>Descubrí las últimas tendencias que seleccionamos especialmente para vos.</p>
+            </div>
+            
+            <div class="arrivals-grid" id="arrivals-grid">
+                <!-- Generado por JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section class="section section-dark" id="categorias">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestras Líneas</span>
+                <h2>Explorá por Categoría</h2>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card" style="background-image: url('Imagenes/1140-woman-shopping-clothes-esp.jpg'); background-size: cover; background-position: center;">
+                    <div class="category-overlay">
+                        <h3>Sacos & Blazers</h3>
+                        <p>Elegancia para tu día a día</p>
+                    </div>
+                </div>
+                <div class="category-card" style="background-image: url('Imagenes/204736.webp'); background-size: cover; background-position: center;">
+                    <div class="category-overlay">
+                        <h3>Vestidos</h3>
+                        <p>Para cada ocasión especial</p>
+                    </div>
+                </div>
+                <div class="category-card" style="background-image: url('Imagenes/joven-mujer-acogedora-al-aire-libre_624325-764.avif'); background-size: cover; background-position: center;">
+                    <div class="category-overlay">
+                        <h3>Tops & Blusas</h3>
+                        <p>Básicos y de tendencia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCATION ===== -->
+    <section class="section" id="showroom">
+        <div class="container location-content">
+            <div class="location-details">
+                <span class="section-tag">Te esperamos</span>
+                <h3>Visita Nuestro Showroom</h3>
+                <p>Vení a probarte todo, sentí las texturas y encontrá el calce perfecto con nuestra asesoría personalizada.</p>
+                
+                <div class="location-item">
+                    <div class="location-item-icon">📍</div>
+                    <span><b>General Paz 894</b> (con cita previa)</span>
+                </div>
+                <div class="location-item">
+                    <div class="location-item-icon">📱</div>
+                    <span>@fashowroom_ en Instagram</span>
+                </div>
+            </div>
+            <div class="location-map">
+                <!-- Usamos una imagen de la raiz como foto decorativa para el showroom -->
+                <img src="Imagenes/gettyimages-2166624179-66fe54752e089.avif" alt="Showroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 style="color: var(--pink-primary); font-family: 'Playfair Display'; font-size: 1.5rem;">FA Showroom</h3>
+                    <p>Moda pensada para la mujer moderna. Destacá tu estilo con prendas únicas y de calidad.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Ig</a>
+                        <a href="#" class="social-link">Wa</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Sacos</a></li>
+                        <li><a href="#">Vestidos</a></li>
+                        <li><a href="#">Pantalones</a></li>
+                        <li><a href="#">Tops</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Cómo Comprar</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>General Paz 894</li>
+                        <li>Solo Cita Previa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FA Showroom. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== AUTH MODAL ===== -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal" id="modal-content">
+            <button class="modal-close" id="modal-close">✕</button>
+            <!-- Contenido inyectado por JS -->
+        </div>
+    </div>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito 🛍️</h3>
+            <button id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Contenido inyectado por JS -->
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="amount" id="cart-total-amount">$0</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="sendWhatsApp()">
+                Finalizar Compra por WhatsApp 💬
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
