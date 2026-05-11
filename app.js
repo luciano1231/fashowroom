@@ -23,6 +23,7 @@ let currentUser = JSON.parse(localStorage.getItem('fa_user') || 'null');
 // ===== DOM READY =====
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initCarousel(); // For hero slider
   renderNewArrivals(); // For index.html
   initCatalog(); // For catalogo.html
   renderCartCount();
@@ -492,4 +493,18 @@ function initCatalog() {
 
   // Initial render
   renderFilteredCatalog();
+}
+
+// ===== CAROUSEL LOGIC =====
+function initCarousel() {
+  const slides = document.querySelectorAll('.carousel-slide');
+  if (slides.length <= 1) return;
+
+  let currentSlide = 0;
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 4000); // Cambia de imagen cada 4 segundos
 }
